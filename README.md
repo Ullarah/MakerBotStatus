@@ -1,6 +1,7 @@
 # MakerBotStatus
 
 ##### Requirements
+* Python 2.7 (https://www.python.org/downloads/)
 * makerbot-gen5-api (https://github.com/gryphius/makerbot-gen5-api)
 
 ##### Running
