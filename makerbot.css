@@ -3,21 +3,22 @@ body {
     padding: 0;
 }
 
-#container {
+div[id*="container"] {
     font-family: Verdana;
     width: 640px;
     height: 240px;
     background-color: #333;
+    border-bottom: 1px solid black;
 }
 
-#webcam {
+div[id*="webcam"] {
     float: left;
     border-right: 1px solid black;
 }
 
 .name {
+    margin: -183px 0 0 335px;
     display: block;
-    margin-left: 335px;
     font-size: 32px;
     font-weight: bold;
     color: #fff;
@@ -30,6 +31,7 @@ body {
 .stat_type {
     display: inline-block;
     color: #ccc;
+    padding-right: 4px;
 }
 
 .result {
@@ -38,8 +40,7 @@ body {
     color: #fff;
 }
 
-#progress {
-    margin-bottom: 8px;
+div[id*="progress"] {
     border-bottom: 1px solid black;
     width: 319px;
     float: right;
@@ -48,13 +49,13 @@ body {
     background-color: #444;
 }
 
-#bar {
+div[id*="bar"] {
     height: 100%;
     position: absolute;
     background-color: red;
 }
 
-#counter {
+div[id*="counter"] {
     position: absolute;
     padding: 12px 0 0 15px;
     font-size: 20px;
