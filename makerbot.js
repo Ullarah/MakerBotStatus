@@ -160,6 +160,14 @@ function updateStats(ip, bot) {
             time_current.innerHTML    = currentTime.toISOString().substr(11, 8);
             time_target.innerHTML     = targetTime.toISOString().substr(11, 8);
             break;
+			
+		case 'preheating_resuming':
+			progress_status.innerHTML = "Resuming " + progress_status.innerHTML;
+			break;
+
+		case 'suspended':
+			progress_status.innerHTML = "Suspended " + progress_status.innerHTML;
+			break;
 
         case 'completed':
             progress_status.innerHTML = "Completed " + progress_status.innerHTML;

@@ -45,9 +45,9 @@ def MakerBotConnect(ip, auth):
     try:
         print "Connecting to", ip, "..."
         makerbot = makerbotapi.Makerbot(ip, auth_code=auth)
-        
+
         connected = False
-        
+
         if auth == None:
             print "Authenticate with your MakerBot Replicator ..."
             try:
@@ -63,7 +63,7 @@ def MakerBotConnect(ip, auth):
         else:
             connected = True
             print "Authenticated Accepted!"
-            
+
         if connected:
             makerbot.authenticate_json_rpc()
             print "Connected Successfully!\n"
@@ -94,7 +94,7 @@ def WriteJSON(ip):
                 )
             ))
         except:
-            CamThread(ip).exit()
+            return
 
 
 def AuthenticationFile():
@@ -107,6 +107,11 @@ def AuthenticationFile():
 
 
 if __name__ == '__main__':
+
+    if 'force' in sys.argv:
+	    print "Forced removal of PID file!"
+	    os.unlink(pidfile)
+
     if os.path.isfile(pidfile):
         print "Instance already running! (%s)" % pidfile
         sys.exit()
@@ -119,7 +124,7 @@ if __name__ == '__main__':
     else:
         if len(sys.argv) < 2:
             print "No MakerBot Authentication file found ..."
-            print "args: <ip address> [auth code]"
+            print "args: <ip address> [auth code] [force]"
             sys.exit()
         else:
             makerbot_ip = sys.argv[1]
